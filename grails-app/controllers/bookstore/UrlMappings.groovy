@@ -12,7 +12,9 @@ class UrlMappings {
         "/"(controller: 'application', action:'index')
 
         "/books"(resources:"book")
-        "/authors"(resources:"author")
+        "/authors"(resources:"author"){
+            "/books"(resources:'book')
+        }
 
         "500"(view: '/error')
         "404"(view: '/notFound')
